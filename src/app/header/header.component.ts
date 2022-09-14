@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
     {name: 'Nick'}
   ]
   public myColor = 'red';
-  public myWidth = 100;
-  public isShown: boolean;
+  // public myWidth = 100;
+  // public isShown: boolean;
   public selectedUser: any = {};
 
   constructor() {
