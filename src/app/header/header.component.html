@@ -1,0 +1,21 @@
+<!--<p (click)="changColor('blue')" [style.color]="myColor" >-->
+<!--  header works!-->
+<!--  Hello {{ user?.name }}-->
+<!--</p>-->
+
+<!--&lt;!&ndash;<input type="text" #inputElement (keydown.control.shift.enter)="changColor(inputElement.value)">&ndash;&gt;-->
+
+<!--<input type="text" #inputElement (keydown.enter)="changColor(inputElement.value)">-->
+
+<!--<button (click)="changColor(inputElement.value)">click</button>-->
+
+<!--<app-user-card *ngIf="isShown" [user]="user"></app-user-card>-->
+<!--<button (click)="isShown = !isShown">toggle</button>-->
+
+<ul>
+  <li *ngFor="let user of users">
+    <app-user-card [user]="user" (userSelected)="selectedUser = user"></app-user-card>
+  </li>
+</ul>
+
+<h1>{{selectedUser.name}}</h1>
