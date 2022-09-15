@@ -8,20 +8,22 @@ import {UserService} from "../user-service/user.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  // public users: IUser[];
-  //
-  // constructor(private userService: UserService) { }
-  //
+  public users: any;
+
+  constructor(private userService: UserService) { }
+
   ngOnInit(): void {
-  //   this.users = this.userService.getAll()
+    this.users = this.userService.getAll()
   }
-  //
-  // deleteUser(name: string) {
-  //   this.userService.delete(name);
-  //   this.users = this.userService.getAll()
-  // }
-  //
-  // addUser(name: string) {
-  //   this.userService.add(name);
-  // }
+
+  deleteUser(name: string) {
+    this.userService.delete(name);
+    this.users = this.userService.getAll()
+  }
+
+  addUser(name: string) {
+    this.userService.add(name);
+  }
 }
+
+

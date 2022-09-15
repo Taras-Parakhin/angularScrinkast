@@ -1,10 +1,10 @@
-<!--<ul>-->
-<!--  <li *ngFor="let user of users">{{user.name}}-->
-<!--    <span (click)="deleteUser(user.name)">x</span>-->
-<!--  </li>-->
-<!--</ul>-->
+<ul>
+  <li *ngFor="let user of users">{{user.name}}
+    <span (click)="deleteUser(user.name)">x</span>
+  </li>
+</ul>
 
-<!--<hr>-->
+<hr>
 
-<!--<input type="text" #inputName (input)="inputName.value">-->
-<!--<button (click)="(addUser(inputName.value)); inputName.value=''">add</button>-->
+<input type="text" #inputName (input)="inputName.value">
+<button (click)="(addUser(inputName.value)); inputName.value=''">add</button>
