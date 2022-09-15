@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
-import {formControl} from "@angular/core/schematics/migrations/typed-forms/util";
+import {Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     // this.nameControl = new FormControl<any>('John', [Validators.required, Validators.minLength(2)]);
-    this.nameControl = new FormControl<any>('John', [Validators.required, this.myValidator]);
+    this.nameControl = new FormControl<any>('John', [Validators.required, this.myValidator], [this.myAsyncValidator]);
     this.nameControl.valueChanges.subscribe(value => console.log(value))
     this.nameControl.statusChanges.subscribe(status => {
       console.log(status);
@@ -27,6 +27,13 @@ export class AppComponent implements OnInit{
     }
 
     return null;
+  }
+
+  myAsyncValidator(formControl: FormControl): Observable<any | null> {
+    if (formControl.value < 3) {
+      return of({myValidator: {message: 'Should be something'}});
+    }
+    return of(null);
   }
 }
 
