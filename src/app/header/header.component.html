@@ -6,5 +6,5 @@
 
 <hr>
 
-<input type="text" #inputName (input)="inputName.value">
-<button (click)="(addUser(inputName.value)); inputName.value=''">add</button>
+<input type="text" #inputName (input)="inputName.value" (keydown.enter)="addUser(inputName.value); inputName.value=''">
+<button (click)="addUser(inputName.value); inputName.value=''">add</button>
