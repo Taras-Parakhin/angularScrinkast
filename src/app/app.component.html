@@ -1,1 +1,6 @@
 <input [formControl]="nameControl">
+
+<form *ngIf="form" [formGroup]="fullNameControl">
+   <input formControlName="firstName">
+   <input formControlName="lastName">
+</form>
